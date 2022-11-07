@@ -10,7 +10,6 @@ public class Solution1 {
 		String str = br.readLine();
 		char c = br.readLine().charAt(0);
 		System.out.println(solution(str, c));
-	
 	}
 
 	private static int solution(String str, char c) {
