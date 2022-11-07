@@ -12,7 +12,6 @@ public class Solution1 {
 		System.out.println(solution(str, c));
 	
 	}
-
 	private static int solution(String str, char c) {
 		int answer = 0;
 		str = str.toUpperCase(); //string �빮�ڷ� ��ȯ

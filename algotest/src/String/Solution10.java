@@ -12,7 +12,6 @@ public class Solution10 {
 		String input = br.readLine();
 		System.out.println(Solution(input));
 	}
-
 	private static String Solution(String input) {
 		StringBuilder sb = new StringBuilder();
 		String[] s = input.split(" ");
