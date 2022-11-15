@@ -3,22 +3,22 @@ package String;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
-public class Solution2 { // 2. 대소문자 변환
-	static StringBuilder sb = new StringBuilder();
+public class Solution9 { // 9.숫자만 추출
+
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();
 		System.out.println(Solution(str));
-	}
 
-	private static String Solution(String str) {
+	}
+	private static int Solution(String str) {
+		String ans = "";
 		for(char x : str.toCharArray()) {
-			if(Character.isLowerCase(x)) sb.append(Character.toUpperCase(x));
-			else sb.append(Character.toLowerCase(x));
+			if(Character.isDigit(x)) ans += x;
 		}
-		
-		return sb.toString();
+		return Integer.parseInt(ans);
 	}
 
 }
