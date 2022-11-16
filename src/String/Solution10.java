@@ -11,7 +11,6 @@ public class Solution10 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input = br.readLine();
 		System.out.println(Solution(input));
-
 	}
 
 	private static String Solution(String input) {
