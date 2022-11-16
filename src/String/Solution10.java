@@ -16,7 +16,6 @@ public class Solution10 {
 	private static String Solution(String input) {
 		String ans = "";
 		//공백 기준으로 string 나누기 teachermode e
-		
 		//s 배열 생성
 		char[] s = input.toCharArray();
 		
