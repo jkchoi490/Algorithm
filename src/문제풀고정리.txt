@@ -1,0 +1,10 @@
+1. String
+(1)
+
+2. Array
+(1) 크기 비교 문제 : array index 초과 에러 발생할 수 있으므로
+배열에 0번째 원소 먼저 삽입 후 1부터 배열 길이까지 for문 돌리기
+(2) ArrayList<Integer> answer = new ArrayList<>();
+
+
+3.  
