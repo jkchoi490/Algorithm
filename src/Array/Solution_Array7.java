@@ -25,7 +25,6 @@ public class Solution_Array7 {
 		
 		System.out.println(solution_p(N,arr));
 	}
-
 	//오답
 	private static int solution(int[] arr) {
 		int final_score = 0;

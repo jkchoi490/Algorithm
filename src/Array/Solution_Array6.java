@@ -47,7 +47,6 @@ public class Solution_Array6 {
 		return answer;
 	}
 	
-	
 	private static String solution(int[] arr, int N) {
 		StringBuilder ans = new StringBuilder();
 		String str = "";
