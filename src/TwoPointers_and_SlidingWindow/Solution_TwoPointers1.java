@@ -3,6 +3,7 @@ package TwoPointers_and_SlidingWindow;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
@@ -25,20 +26,26 @@ public class Solution_TwoPointers1 {
 		
 		//System.out.println(Arrays.toString(arr));
 		//System.out.println(Arrays.toString(marr));
-		System.out.println(TwoPointers(arr));
+		//System.out.println(TwoPointers(arr));
 		
+		ArrayList<Integer> ans = solution(N,M,arr,marr);
+		for(int x : ans) {
+			System.out.print(x+" ");
+		}
 	}
-	public static int TwoPointers(int[] arr) {
-		int partial_sum = 0;
-		
-		int count = 0;
-		int start = 0;
-		int end = 0;
-		
-		
-		
-		return partial_sum;
+	
+	public static ArrayList<Integer> solution(int n, int m, int[] a, int[] b){
+		ArrayList<Integer> answer = new ArrayList<>();
+		int p1=0, p2=0;
+		while(p1<n && p2<m){
+			if(a[p1]<b[p2]) answer.add(a[p1++]);
+			else answer.add(b[p2++]);
+		}
+		while(p1<n) answer.add(a[p1++]);
+		while(p2<m) answer.add(b[p2++]);
+		return answer;
 	}
+
 	
 
 }
