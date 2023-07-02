@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Solution_TwoPointers1 { //오답
+public class Solution_TwoPointers1_1 { //오답
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,24 +23,13 @@ public class Solution_TwoPointers1 { //오답
 		for(int j = 0; j<M; j++) {
 			arr2[j] = Integer.parseInt(st.nextToken());
 		}
-		
-		int[] mergearr = new int[N+M];
-		for(int k = 0; k<N; k++) {
-			mergearr[k] = arr1[k];
-		
-		}
-		for(int a = N; a<N+M; a++) {
-			mergearr[a] = arr2[a-N];
-		
-		}
-		Arrays.sort(mergearr);
-		for(int x : mergearr) {
+		for(int x : solution(N,M,arr1,arr2)) {
 			System.out.print(x+" ");
 		}
 		
 	}
 	
-	public ArrayList<Integer> solution(int n, int m, int[] a, int[] b){
+	public static ArrayList<Integer> solution(int n, int m, int[] a, int[] b){
 		ArrayList<Integer> answer = new ArrayList<>();
 		int p1=0, p2=0;
 		while(p1<n && p2<m){ //p1과 p2가 각각 배열의 크기를 넘지 않으면(인덱스 0,1,2 값)
