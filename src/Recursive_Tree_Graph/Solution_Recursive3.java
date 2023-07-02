@@ -10,7 +10,6 @@ public class Solution_Recursive3 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		DFS(N);
-
 	}
 
 	private static void DFS(int n) {

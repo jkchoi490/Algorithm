@@ -22,6 +22,7 @@ class Solution_Recursive10 {
 		}
 		
 	}
+	
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;

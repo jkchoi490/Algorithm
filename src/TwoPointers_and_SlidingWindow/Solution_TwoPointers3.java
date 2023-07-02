@@ -39,8 +39,6 @@ public class Solution_TwoPointers3 {
 			p2++;
 		}
 		
-		
-		
 		return max;
 	}
 

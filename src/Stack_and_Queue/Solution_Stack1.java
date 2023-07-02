@@ -40,7 +40,6 @@ public class Solution_Stack1 {
 				//스택이 비어있으면 짝이 안맞는 괄호이므로 NO 출력
 				if(stack.isEmpty()) return ans="NO"; //닫는 괄호 ) 가 많은 상황 EX. (()))
 				else stack.pop(); //스택이 비어있지 않으면 하나 꺼냄
-				
 			}
 		}
 		if(!stack.isEmpty()) return ans="NO"; //여는 괄호 (가 많은 상황 EX. (())()(

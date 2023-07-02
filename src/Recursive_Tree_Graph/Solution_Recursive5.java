@@ -32,7 +32,7 @@ public class Solution_Recursive5 {
 			System.out.print(root.data+" ");
 	 * 
 	 * 
-	 * */
+	 */
 	public static void DFS(Node root) {
 		if(root == null) return;
 		else {

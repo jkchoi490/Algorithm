@@ -31,7 +31,7 @@ public class Solution_Stack2 {
 		return ans;
 	}
 
-	private static String solution(char[] inputs) {
+	private static String solution(char[] inputs) { //fail
 		StringBuilder sb = new StringBuilder();
 		
 		Stack<Character> stack = new Stack<>();

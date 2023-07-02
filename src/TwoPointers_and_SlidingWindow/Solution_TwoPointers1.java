@@ -36,8 +36,7 @@ public class Solution_TwoPointers1 { //오답
 		Arrays.sort(mergearr);
 		for(int x : mergearr) {
 			System.out.print(x+" ");
-		}
-		
+		}	
 	}
 	
 	public ArrayList<Integer> solution(int n, int m, int[] a, int[] b){

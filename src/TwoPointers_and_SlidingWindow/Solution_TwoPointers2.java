@@ -26,7 +26,7 @@ public class Solution_TwoPointers2 {
 		solution(N,A,M,B);
 		
 	}
-
+	
 	private static void solution(int N, int[] A, int M, int[] B) {
 		StringBuilder sb = new StringBuilder();
 		ArrayList<Integer> arr = new ArrayList<>();

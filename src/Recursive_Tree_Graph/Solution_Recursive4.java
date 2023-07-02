@@ -12,7 +12,6 @@ public class Solution_Recursive4 {
 		int N = Integer.parseInt(br.readLine());
 		int[] arr = new int[N];
 		DFS(N,arr);
-		
 
 	}
 

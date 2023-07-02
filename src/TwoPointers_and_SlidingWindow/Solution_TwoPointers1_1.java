@@ -26,7 +26,6 @@ public class Solution_TwoPointers1_1 { //오답
 		for(int x : solution(N,M,arr1,arr2)) {
 			System.out.print(x+" ");
 		}
-		
 	}
 	
 	public static ArrayList<Integer> solution(int n, int m, int[] a, int[] b){
