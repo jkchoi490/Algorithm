@@ -28,7 +28,6 @@ MenOfPassion(A[], n) {
 		
 		System.out.println(n*n);// 시간복잡도O(N^2)
 		System.out.println(2); //최고차항의 차수 2
-
 	}
 
 }
