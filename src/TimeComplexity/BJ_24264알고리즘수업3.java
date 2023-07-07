@@ -16,11 +16,11 @@ MenOfPassion(A[], n) {
 
 입력의 크기 n(1 ≤ n ≤ 500,000)
 
- */
+*/
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));		
-/*틀린이유 
+/* int로 시도했을때 
 		int n = Integer.parseInt(br.readLine()); -> 입력의 크기 n의 범위가 (1 ≤ n ≤ 500,000)이므로
 		System.out.println(n*n);  n*n 했을때 overflow가 발생할 수 있다
 */		
