@@ -6,83 +6,28 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Solution12 {
-
+	
+	static int n;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
+		n = Integer.parseInt(br.readLine());
 		String str = br.readLine();
-		System.out.println(solution(n, str));
+		solution(str);
+		
+	}
+	private static void solution(String str) {
+		String answer = "";
+		for(int i = 0; i<n; i++) {
+			String tmp = str.substring(0, 7); //0~6까지 잘라내기 #****##, #**####, #**####, #**##**
+			tmp = tmp.replace('#', '1').replace('*', '0'); // #-> 1, * -> 0 으로 변경
+			int num = Integer.parseInt(tmp, 2); //tmp를 이진수로 변경
+			answer += (char) num; // 숫자 -> 문자로 변경
+			str = str.substring(7); // 7개씩 끊고 넘어가기
+			
+		}
+		System.out.println(answer);
+		
 	}
 
-	private static String solution(int n, String str) {
-		StringBuilder sb = new StringBuilder();
-		String[] div_arr = new String[n];
-	
-		for(int j = 0; j<4; j++) {
-			for(int i = 1; i<(7*n)+1; i++) {
-				sb.append(str.charAt(i-1)); 
-				//System.out.println(sb.toString());
-				if(i % 7 == 0) {
-					div_arr[j] = sb.toString();
-					//System.out.println(sb.toString());
-					sb.setLength(0); //StringBuilder 저장한 문자열 모두 제거
-					j++;
-					
-				}
-				
-			}
-		//	System.out.println(Arrays.toString(div_arr));
-			
-			String alphabet = "";
-			
-			for(int k = 0; k <div_arr.length; k++) {
-				alphabet = div_arr[k];
-				for(int a = 0 ; a<alphabet.length(); a++) {
-					
-					if(alphabet.charAt(a) == '#') {
-						alphabet = alphabet.replace('#', '1'); 
-						div_arr[k] = alphabet;
-					}
-					else if(alphabet.charAt(a) == '*') {
-						alphabet = alphabet.replace('*', '0');
-						div_arr[k] = alphabet;
-					}
-				}
-			}
-			//System.out.println(Arrays.toString(div_arr));
-					
-	}
-		StringBuilder s_r = new StringBuilder();
-		int ans = 0;
-		double result = 0;
-		
-		for(String s : div_arr) {
-			ans = 0;	
-			for(int i = 0; i<s.length(); i++) {
-				if(s.charAt(i) == '1') {
-					result = Math.pow(2, 6-i);
-					ans += result;
-				}
-				
-			}
-			
-			String a = Character.toString((char)ans);
-			s_r.append(a);
-		
-		}
-		
-		return s_r.toString();
-	}
-
-	public String t_solution(int n, String s){
-		String answer="";
-		for(int i=0; i<n; i++){
-			String tmp=s.substring(0, 7).replace('#', '1').replace('*', '0'); //substring : 문자열 추출
-			int num=Integer.parseInt(tmp, 2);
-			answer+=(char)num;
-			s=s.substring(7);
-		}
-		return answer;
-	}
 	
 }

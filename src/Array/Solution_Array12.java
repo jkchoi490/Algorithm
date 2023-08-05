@@ -3,29 +3,49 @@ package Array;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Solution_Array12 {
-	static int n;
+	
+	static int[][] students;
+	static int n, m;
+	
+	public static int solution(int[][] students) {
+		int ans = 0;
+	
+		for(int i = 1; i<=n; i++) { 
+			for(int j = 1; j<=n; j++) {
+				int cnt = 0;
+				for(int k = 0; k<m; k++) { //테스트 개수 
+					int pi=0, pj = 0;
+					for(int s = 0; s<n; s++) { //학생수 
+						if(students[k][s] == i) pi = s; //i의 등수
+						if(students[k][s] == j) pj = s; //j의 등수
+					}
+					if(pi<pj) cnt++; // i가 멘토, j가 멘티 -> i의 등수가 j의 등수보다 높을경우 cnt 증가 
+				}
+				if(cnt==m) {
+					ans++;
+				}
+			}
+		}
+		
+		return ans;
+	}
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		n = Integer.parseInt(br.readLine());
-		String str = br.readLine();
-		solution(str);
-		
-	}
-	private static void solution(String str) {
-		String answer = "";
-		for(int i = 0; i<n; i++) {
-			String tmp = str.substring(0, 7); //0~6까지 잘라내기 #****##, #**####, #**####, #**##**
-			tmp = tmp.replace('#', '1').replace('*', '0'); // #-> 1, * -> 0 으로 변경
-			int num = Integer.parseInt(tmp, 2); //tmp를 이진수로 변경
-			answer += (char) num; // 숫자 -> 문자로 변경
-			str = str.substring(7); // 7개씩 끊고 넘어가기
-			
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		n = Integer.parseInt(st.nextToken());
+		m = Integer.parseInt(st.nextToken());
+		students = new int[m][n];
+		for(int i = 0; i<m; i++) {
+			st = new StringTokenizer(br.readLine());
+			for(int j = 0; j<n; j++) {
+				students[i][j] = Integer.parseInt(st.nextToken());
+			}
 		}
-		System.out.println(answer);
-		
+
+		System.out.println(solution(students));
 	}
 
-	
 }
