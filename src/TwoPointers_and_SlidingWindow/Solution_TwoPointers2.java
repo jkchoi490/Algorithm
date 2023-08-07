@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Solution_TwoPointers2 {
+public class Solution_TwoPointers2 { //공통원소 구하기
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -28,7 +28,6 @@ public class Solution_TwoPointers2 {
 	}
 	
 	private static void solution(int N, int[] A, int M, int[] B) {
-		StringBuilder sb = new StringBuilder();
 		ArrayList<Integer> arr = new ArrayList<>();
 		int p1 = 0; 
 		int p2 = 0;
@@ -39,8 +38,7 @@ public class Solution_TwoPointers2 {
 		while(p1<N && p2<M) {
 			if(A[p1] < B[p2]) p1++;
 			else if(A[p1] == B[p2]) {
-				arr.add(A[p1]);
-				p1++;
+				arr.add(A[p1++]);
 				p2++;
 			}
 			else p2++;
