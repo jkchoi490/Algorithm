@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Solution_TwoPointers1_1 { //오답
+public class Solution_TwoPointers1_1 {  //투포인터 알고리즘 공부
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
