@@ -12,8 +12,6 @@ class Node{
 	}
 }
 
-
-
 public class Solution_Recursive7 { // 이진트리 레벨탐색(BFS : Breadth-First Search)
 
 	Node root; // root 노드 생성
