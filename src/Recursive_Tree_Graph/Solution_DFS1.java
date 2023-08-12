@@ -9,7 +9,7 @@ class Node{
 	}
 }
 public class Solution_DFS1 { // Tree 말단노드까지의 까장 짧은 경로(DFS)
-
+	
 	Node root;
 	public int DFS(int L, Node root) {
 		if(root.lt == null && root.rt == null) {//말단 노드인 경우
@@ -21,6 +21,7 @@ public class Solution_DFS1 { // Tree 말단노드까지의 까장 짧은 경로(
 	}
 	
 	public static void main(String[] args) {
+		
 		//트리 생성
 		Solution_DFS1 tree = new Solution_DFS1();
 		tree.root=new Node(1); 
