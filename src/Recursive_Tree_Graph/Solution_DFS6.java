@@ -8,14 +8,14 @@ import java.util.StringTokenizer;
 public class Solution_DFS6 { // 중복순열 구하기
 
 	static int N, M;
-	static int[] perm;
+	static int[] p; 
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
-		perm = new int[M];
+		p = new int[M];
 		DFS(0);
 
 	}
@@ -25,7 +25,7 @@ public class Solution_DFS6 { // 중복순열 구하기
 			System.out.println();
 		}else {
 			for(int i = 1; i<=N; i++) {
-				perm[L] = i;
+				p[L] = i;
 				DFS(L+1);
 			}
 		}
