@@ -1,4 +1,4 @@
-
+package Recursive_Tree_Graph;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,7 @@ class sdokuPoint{
 		this.y=y;
 	}
 }
-public class BJ2580_스도쿠 {
+public class BJ_2580스도쿠 {
 	static int[][] graph;
 	static ArrayList<sdokuPoint> points;
 	
