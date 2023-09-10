@@ -18,5 +18,4 @@ public class BJ10807 {
 		}
 		System.out.println(cnt);
 	}
-
 }
