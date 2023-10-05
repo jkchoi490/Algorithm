@@ -11,8 +11,10 @@ public class BAEKJOON1187 {
 	    int[] arr = new int[(2*n)-1];
 	    StringTokenizer st = new StringTokenizer(br.readLine());
 	    for(int i = 0; i<(2*n-1); i++) arr[i] = Integer.parseInt(st.nextToken());
-	    int cnt = 0;
-	   
+	    int k = 1;
+	    int tmp = n;
+	    while((tmp>>=1) != 1) {
+	    	k++;
+	    }	    
 	}
-
 }
