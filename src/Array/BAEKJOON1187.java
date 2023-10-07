@@ -4,14 +4,11 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.util.ArrayDeque;
 import java.util.Deque;
-
 class Num{
-	
+	int num;
 }
 public class BAEKJOON1187 {
 	public static void main(String[] args) throws IOException {
-
-	
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	    int n = Integer.parseInt(br.readLine());
 	    int[] arr = new int[(2*n)-1];
