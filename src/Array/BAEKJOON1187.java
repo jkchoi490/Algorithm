@@ -6,6 +6,11 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 class Num{
 	int num;
+	
+	public Num(int num, int idx) {
+		this.num = num;
+		
+	}
 }
 public class BAEKJOON1187 {
 	public static void main(String[] args) throws IOException {
@@ -20,7 +25,9 @@ public class BAEKJOON1187 {
 	    while((tmp>>=1) != 1) {
 	    	k++;
 	    }
-
+	    for(int i = 1; i<=k; i++) {
+	    	
+	    }
 	}
 	
 }
