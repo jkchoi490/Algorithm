@@ -6,13 +6,15 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 class Num{
 	int num;
-	
+	int[] ingredients;
 	public Num(int num, int idx) {
 		this.num = num;
-		
+		ingredients = new int[64];
 	}
 }
 public class BAEKJOON1187 {
+	
+	static int N;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	    int n = Integer.parseInt(br.readLine());
@@ -26,7 +28,7 @@ public class BAEKJOON1187 {
 	    	k++;
 	    }
 	    for(int i = 1; i<=k; i++) {
-	    	
+	    	int limit = dq.size()/2;
 	    }
 	}
 	
