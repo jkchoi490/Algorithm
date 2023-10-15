@@ -8,7 +8,5 @@ public class BAEKJOON1843 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		
-
-	}
-
+		}
 }
