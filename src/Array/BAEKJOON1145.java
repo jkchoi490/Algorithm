@@ -9,4 +9,7 @@ public class BAEKJOON1145 {
 	
 	
 	}
+
+
+
 }
