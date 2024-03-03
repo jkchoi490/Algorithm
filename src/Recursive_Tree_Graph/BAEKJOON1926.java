@@ -25,7 +25,6 @@ public class BAEKJOON1926 {
 			}
 		}
 		
-		
 		if(picture == 0) {
 			System.out.println(pictures.size());
 			System.out.println(0);
