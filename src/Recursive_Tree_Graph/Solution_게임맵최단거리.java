@@ -38,9 +38,7 @@ class Solution_게임맵최단거리 {
         int[][] visited = new int[maps.length][maps[0].length];
         BFS(maps, visited);
         answer = visited[maps.length-1][maps[0].length-1];
-        if(answer == 0) answer = -1;
-        
-        
+        if(answer == 0) answer = -1;        
         return answer;
     }
 }
