@@ -20,7 +20,6 @@ class Point {
         return Objects.hash(x, y);
     }
 }
-
 class Load {
     Point front, back;
 
