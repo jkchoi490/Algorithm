@@ -11,6 +11,16 @@ public class BAEKJOON2636 {
     static int[] dx = {1, -1, 0, 0}; //x(행) 방향 벡터
     static int[] dy = {0, 0, 1, -1}; //y(행) 방향 벡터
 
+    /*
+    * 코드의 기술적 설명
+
+    - 자료구조 : Queue<int[]>를 활용하여 좌표 정보를 관리합니다.
+    - 방문처리 : visited[][] 배열을 사용하여 공기 탐색 시 중복 방문 및 무한 루프를 방지합니다.
+    - 방향 벡터 : dx, dy 배열을 통해 상하좌우 인접 칸을 깔끔하게 탐색합니다.
+    - solution : BFS를 수행하기 전 solution을 먼저 호출하여 현재 개수를 기록합니다.
+
+    */
+
     public static void main(String[] args) throws IOException {
         // 입력을 받기 위한 설정
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
