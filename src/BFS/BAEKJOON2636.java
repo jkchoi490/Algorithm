@@ -36,6 +36,9 @@ public class BAEKJOON2636 {
        시작점 (0, 0): 문제 조건상 판의 가장자리에는 치즈가 놓이지 않으므로, (0, 0)은 항상 외부 공기입니다.
        탐색 범위: (0, 0)에서 시작해 연결된 모든 공기를 탐색합니다.
 
+   * 알고리즘 동작 설명
+      1. (0, 0) 좌표부터 BFS를 시작
+      2. 시간 측정 및 치즈 개수 기록
     */
 
     public static void main(String[] args) throws IOException {
