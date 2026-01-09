@@ -6,6 +6,18 @@ import java.util.*;
 // Virtual Judge - Save the Princess
 public class Solution_SaveThePrincess {
 
+    /*
+    * Virtual Judge에 있는 Save the Princess 문제를 풀기 위한 주석을 작성하고 있습니다.
+    * TODO:
+    *  1. 문제가 정확히 무엇인지 (정의/입출력/조건)를 찾습니다 :
+    *  2. 문제 해결 방법을 찾습니다 (알고리즘, 자료구조 등) :
+    *  3. 문제 해결에 쓰이는 알고리즘 및 자료구조 등을 작성합니다 :
+    *  4. 알고리즘을 적용하여 문제 해결 코드를 작성하고 실행합니다 :
+    *  5. 문제 해결 코드를 개선하기 위한 작업을 진행합니다 (디버깅/시간,공간 복잡도) :
+    *  6. 문제 해결 코드를 최적화합니다 :
+    *  7. 문제 해결 과정을 복습합니다 :
+    */
+
     static class Point {
         double x, y;
         Point(double x, double y) { this.x = x; this.y = y; }
