@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.*;
 
 // CodeForces - Saving Princess
+// 비트마스킹 + 백트래킹을 활용한 탐색 문제
+// n개의 이벤트를 순서대로 처리하여 공주를 구하는 경로를 찾습니다
 public class SavingPrincess_CodeForces {
 
     static int n;
@@ -15,6 +17,7 @@ public class SavingPrincess_CodeForces {
     static int number = 730;
 
     // 공주님을 구하고 돕는 메서드를 구현합니다
+    // 재귀적으로 모든 순열을 탐색하여 공주님을 구하는 경로를 찾는 메서드
     static void SaveAndHelpPrincess(int health, int strength, int power, int value,
                                     int integer, int count, char[] array) {
 
@@ -80,6 +83,7 @@ public class SavingPrincess_CodeForces {
         br.close();
 
         // 공주님을 구하고 돕는 메서드를 실행합니다
+        // 탐색 시작: 초기 상태에서 문제를 해결하기 위한 경로를 탐색합니다
         SaveAndHelpPrincess(h, s, p, m, 0, 0, array);
 
         sb.append(Array != null ? new String(Array) : "");
