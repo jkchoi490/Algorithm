@@ -4,9 +4,20 @@ import java.io.*;
 import java.util.*;
 
 // Virtual Judge(CodeForces) - Saving Princess
+
+/*
+* 순차적으로 올리려다 커밋이 실수로 이전 커밋인 [BOJ] 02636 치즈 (치즈의 고유성에 대한 설명 추가 작성) 커밋에 한꺼번에 올라간 것을 수정하기 위해 커밋 주석을 작성하였습니다.
+* SavingPrincess_VirtualJudge_CodeForces 코드의 커밋인 Virtual Judge(CodeForces) - Saving Princess 는 이전 작성한 [BOJ] 02636 치즈 (치즈의 고유성에 대한 설명 추가 작성) 커밋과는 별개의 것이고 실수로 한꺼번에 올라간 커밋들을을 분리하고 고치고 따로 올리기 위해 작성하였습니다.
+* 위 문제는 공주님을 구하기 위해 DP를 사용하여 문제를 풀어 해결하는 방식으로 코드를 작성하였습니다.
+* SaveAndHelpPrincess() 메서드는 7개의 파라미터를 통해 구현하였고 main 함수에서 이를 실행합니다.
+* 알고리즘은 DP를 사용하였고, 문제에서 주어진 값을 입력받는 과정과 문제를 해결하는 과정으로 나누어서 구현하였습니다.
+* DP를 통해 공주님을 구하기 위한 최적의 경로를 찾는 메서드를 구현하였습니다.
+* BufferedReader를 통한 입력 과정과 DP를 통한 SaveAndHelpPrincess() 메서드 구현 과정을 통해 문제의 해결책을 구현하였습니다.
+* */
 public class SavingPrincess_VirtualJudge_CodeForces {
 
     // 공주님을 구하고 돕는 메서드를 구현합니다
+    // 공주님을 구하기 위한 최적의 경로를 찾는 메서드를 구현합니다.
     static String SaveAndHelpPrincess(int n, int number, int strength, int power, int[][] arr, int value, char[] resultArr) {
 
         int[][][] dp = new int[n + 1][n + 1][value + 1];
@@ -125,9 +136,9 @@ public class SavingPrincess_VirtualJudge_CodeForces {
 
             // 문제에서 주어진 입력 값
             int n = Integer.parseInt(st.nextToken());
-            int h = Integer.parseInt(st.nextToken());
-            int s = Integer.parseInt(st.nextToken());
-            int p = Integer.parseInt(st.nextToken());
+            int h = Integer.parseInt(st.nextToken()); // 체력
+            int s = Integer.parseInt(st.nextToken()); // 힘
+            int p = Integer.parseInt(st.nextToken()); //
             int m = Integer.parseInt(st.nextToken());
 
             int[][] arr = new int[n + 1][n];
