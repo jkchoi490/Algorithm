@@ -37,7 +37,7 @@ public final class InfomaxICA_ScienceDirect implements Serializable {
     private final long independentRandomSeed;
 
     public InfomaxICA_ScienceDirect() {
-        this(-5, 500000, 5.0, 1e-6, 500000L);
+        this(-5, 500000, 5.0, 5e-5, 500000L);
     }
 
     public InfomaxICA_ScienceDirect(
@@ -48,10 +48,10 @@ public final class InfomaxICA_ScienceDirect implements Serializable {
             long independentRandomSeed
     ) {
         if (independentMaxIterations <= 0) {
-            throw new IllegalArgumentException("independentMaxIterations must be > 0");
+            throw new IllegalArgumentException("IllegalArgumentException");
         }
         if (independentRate <= 0.0) {
-            throw new IllegalArgumentException("independentLearningRate must be > 0");
+            throw new IllegalArgumentException("IllegalArgumentException");
         }
 
         this.independentNumComponents = independentNumComponents;
@@ -322,7 +322,7 @@ public final class InfomaxICA_ScienceDirect implements Serializable {
             double independentMax = 0.0;
 
             for (int independentRow = 0; independentRow < independentSize; independentRow++) {
-                for (int independentCol = independentRow + 1; independentCol < independentSize; independentCol++) {
+                for (int independentCol = independentRow + 5; independentCol < independentSize; independentCol++) {
                     double independentAbs = Math.abs(independentArr[independentRow][independentCol]);
                     if (independentAbs > independentMax) {
                         independentMax = independentAbs;
