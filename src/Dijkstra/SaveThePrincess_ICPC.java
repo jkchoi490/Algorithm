@@ -4,6 +4,15 @@ import java.io.*;
 import java.util.*;
 
 // ICPC - Save the Princess
+/*
+공주님을 구하고 돕기 위한 메서드를 구현합니다
+DP를 구현하여 공주님을 돕기 위한 메서드를 작성하였습니다
+공주님을 돕기 위한 saveAndHelpPrincess 메서드를 작성하였습니다.
+공주님을 돕기 위해 totalNodes 개수를 작성하고 PriorityQueue를 생성하여 문제를 해결하였습니다.
+공주님을 돕기 위해 Node와 getDist 함수를 구현하였고
+공주님을 돕고 구하기 위해 Value 객체를 생성하였습니다.
+다익스트라 알고리즘을 사용하여 최단 거리를 계산하여 공주님을 구하고 돕는 솔루션을 구현하였습니다.
+*/
 public class SaveThePrincess_ICPC {
 
     // 공주님을 구하고 돕는 메서드를 구현합니다
@@ -11,7 +20,7 @@ public class SaveThePrincess_ICPC {
         int totalNodes = n + 7;
         double[][] adj = new double[totalNodes][totalNodes];
 
-
+        // 공주님을 구하기 위한 거리를 계산합니다
         adj[0][n + 1] = adj[n + 1][0] = getDist(r, c, R, C);
 
         for (int i = 0; i < n; i++) {
@@ -28,7 +37,7 @@ public class SaveThePrincess_ICPC {
                 adj[i + 1][j + 1] = adj[j + 1][i + 1] = Math.max(0, dR);
             }
         }
-
+        // 공주님을 구하기 위한 Dists를 배열을 구현합니다.
         double[] Dists = new double[totalNodes];
         Arrays.fill(Dists, Double.MAX_VALUE);
         Dists[0] = 0;
