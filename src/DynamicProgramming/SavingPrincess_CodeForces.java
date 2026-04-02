@@ -6,6 +6,19 @@ import java.util.*;
 // CodeForces - Saving Princess
 // 비트마스킹 + 백트래킹을 활용한 탐색 문제
 // n개의 이벤트를 순서대로 처리하여 공주를 구하는 경로를 찾습니다
+
+/*
+ * CodeForces의 Saving Princess 문제 해결을 위한 Solution 주석 작성
+ * 공주님을 구하고 돕는 문제 해결을 위한 Solution을 구현해보았습니다!
+ * 비트마스킹과 DFS를 활용하여 Solution을 구체화했습니다.
+ * 1. 비트마스킹과 DFS를 활용하여 공주님을 구하는 최적의 경로를 찾습니다.
+ * 2. SaveAndHelpPrincess() 메서드를 구현합니다.
+ * 3. 경로를 배열에 기록하며, 올바른 순서를 구성해 나갑니다.
+ * 4. 비트마스킹을 통해 이미 진행한 프로세스를 관리하고, 효율적인 탐색을 가능하게 합니다.
+ * 5. 문제 해결을 위한 가장 효율적인 길을 찾습니다.
+ * 6. HashSet을 통해 더 빠르고 안정적인 탐색을 수행합니다.
+ * 7. 이러한 방식을 통해 공주님을 구하고 돕는 Solution을 구현합니다.
+ */
 public class SavingPrincess_CodeForces {
 
     static int n;
