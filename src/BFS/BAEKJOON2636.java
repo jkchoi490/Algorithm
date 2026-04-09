@@ -3743,6 +3743,17 @@ public class BAEKJOON2636 {
      *
      **/
 
+    /**
+     * [BOJ] 02636 치즈
+     * (0, 0)에서 BFS를 시작하여 알고리즘을 시작합니다.
+     * 치즈일 시 해당 값을 0으로 갱신합니다.
+     * 한 번의 BFS 수행은 1시간의 경과를 의미하며, 이 과정을 반복합니다.
+     * 각 시간 시작 시점마다 남아있는 치즈 개수를 기록합니다.
+     * 더 이상 치즈가 없을 때까지 시뮬레이션을 반복합니다.
+     * 최종적으로 전체 소요 시간과 치즈 개수를 출력합니다.
+     **/
+
+
     public static void main(String[] args) throws IOException {
         // 입력을 받기 위한 설정
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
