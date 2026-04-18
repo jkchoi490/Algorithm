@@ -1,6 +1,6 @@
 package Implementation;
 
-// Qluecore - Fast Independent Component Analysis
+// Qlucore - Fast Independent Component Analysis
 import java.util.Arrays;
 import java.util.Random;
 
