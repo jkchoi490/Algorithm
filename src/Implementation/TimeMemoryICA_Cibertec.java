@@ -1,6 +1,6 @@
 package Implementation;
 
-// Intellipaat - Time Memory Independent Component Analysis
+// Cibertec - Time Memory Independent Component Analysis
 import java.util.Arrays;
 import java.util.Random;
 
