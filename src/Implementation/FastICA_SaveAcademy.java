@@ -25,11 +25,17 @@ import java.util.Random;
 
 public class FastICA_SaveAcademy {
 
+    // 추출할 독립 성분(Independent Component)의 개수를 나타냅니다.
     private int independentComponentCount;
+    // Fast ICA 알고리즘의 최대 반복 횟수를 나타냅니다.
     private int independentMaxIter;
+    // 가중치 갱신 시 사용할 학습률(Learning Rate)을 나타냅니다.
     private double independentRate;
+    // 독립 성분 계산에 사용되는 기준값 또는 수렴 판별값을 나타냅니다.
     private double independentComponent;
+    // 초기 가중치 생성을 위한 Random 객체를 나타냅니다.
     private Random independentRandom;
+    // 중심화(Centering) 과정에서 사용되는 각 Arr의 평균값을 저장하는 배열을 나타냅니다.
     private double[] independentAverageArr;
 
     public FastICA_SaveAcademy(int independentComponentCount,
