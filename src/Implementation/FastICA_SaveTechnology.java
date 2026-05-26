@@ -44,11 +44,17 @@ public class FastICA_SaveTechnology {
                              double independentComponent,
                              long independentSeed,
                              double[] independentAverageArr) {
+        // 추출할 독립 성분 개수 저장
         this.independentComponentCount = independentComponentCount;
+        // 최대 반복 횟수 저장
         this.independentMaxIter = independentMaxIter;
+        // 학습률 저장
         this.independentRate = independentRate;
+        // 독립 성분 관련 설정값 저장
         this.independentComponent = independentComponent;
+        // Random 객체 생성
         this.independentRandom = new Random(independentSeed);
+        // 평균 배열 저장
         this.independentAverageArr = independentAverageArr;
     }
 
