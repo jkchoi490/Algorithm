@@ -38,6 +38,14 @@ public class FastICA_SaveAcademy {
     // 중심화(Centering) 과정에서 사용되는 각 Arr의 평균값을 저장하는 배열을 나타냅니다.
     private double[] independentAverageArr;
 
+    /**
+     * FastICA 알고리즘 실행에 필요한 설정값과
+     * 초기화 데이터를 저장하는 역할을 수행합니다.
+     * 또한 독립 성분 분석을 위한 반복 계산 환경을 구성하며,
+     * 초기 가중치 생성을 위한 Random 객체를 초기화합니다.
+     * 그리고 연산 수행에 필요한 평균 배열을 저장하고
+     * 중심화 및 독립 성분 추출 과정에서 사용할 수 있도록 합니다.
+     **/
     public FastICA_SaveAcademy(int independentComponentCount,
                               int independentMaxIter,
                               double independentRate,
