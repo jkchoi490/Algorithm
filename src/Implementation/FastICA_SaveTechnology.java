@@ -66,6 +66,15 @@ public class FastICA_SaveTechnology {
         this.independentAverageArr = independentAverageArr;
     }
 
+    /**
+     * 입력 배열에 대해 중심화(Centering)와 정규화(Scaling)를 수행합니다.
+     * 독립 성분 추출을 위한 초기 가중치 배열을 생성하고 정규화합니다.
+     * 반복적으로 투영값 계산과 비선형 함수 적용을 수행합니다.
+     * 학습률을 이용하여 가중치를 갱신하며 독립 성분을 점진적으로 분리합니다.
+     * 가중치 변화량이 임계값을 판단하고 수렴한지 판단합니다.
+     * 최종적으로 분리된 독립 성분 배열을 계산하여 반환합니다.
+     */
+
     public double[][] independentFit(double[][] independentArr) {
         double[][] independentCenteredArr = independentCenterArr(independentArr);
         double[][] independentScaledArr = independentScaleArr(independentCenteredArr);
