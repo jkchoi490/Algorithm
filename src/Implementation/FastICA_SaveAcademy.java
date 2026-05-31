@@ -76,15 +76,20 @@ public class FastICA_SaveAcademy {
      */
 
     public double[][] independentFit(double[][] independentArr) {
+        // 입력 배열의 평균에 대해 각 특성의 중심을 맞춥니다.
         double[][] independentCenteredArr = independentCenterArr(independentArr);
+        // 중심화된 배열을 정규화하여 각 특성의 크기를 균일하게 조정합니다.
         double[][] independentScaledArr = independentScaleArr(independentCenteredArr);
 
+        // 독립 성분 개수와 특성 수에 맞는 초기 가중치 배열을 생성합니다.
         double[][] independentArray =
                 independentRandomArr(independentComponentCount, independentScaledArr[0].length);
-
+        // 각 가중치 벡터의 크기를 1로 맞춰 안정적인 학습 환경을 구성합니다.
         independentArray = independentNormalizeRowsArr(independentArray);
 
+        // 최대 반복 횟수 내에서 독립 성분 분리를 위한 학습을 수행합니다.
         for (int independentIter = 0; independentIter < independentMaxIter; independentIter++) {
+            // 수렴 여부 판단을 위해 현재 가중치 배열 상태를 저장합니다.
             double[][] independent_Arr = independentMethodArr(independentArray);
 
             double[][] independentProjectedArr =
