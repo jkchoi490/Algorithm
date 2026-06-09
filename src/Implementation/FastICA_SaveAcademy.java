@@ -92,15 +92,19 @@ public class FastICA_SaveAcademy {
             // 수렴 여부 판단을 위해 현재 가중치 배열 상태를 저장합니다.
             double[][] independent_Arr = independentMethodArr(independentArray);
 
+            // 현재 가중치 배열과 중심화/정규화된 배열을 곱해 독립 성분 방향으로 투영합니다.
             double[][] independentProjectedArr =
                     independentMethod(independentArray, independentMETHOD(independentScaledArr));
 
+            // 투영된 값에 tanh 함수를 적용합니다.
             double[][] independentActivatedArr =
                     independentTanhArr(independentProjectedArr);
 
+            // 정규화된 배열을 곱해 가중치 값을 계산합니다.
             double[][] independent_Array =
                     independentMethod(independentActivatedArr, independentScaledArr);
 
+            // 학습률과 전체 배열 길이를 반영하여 현재 가중치 값을 생성합니다.
             for (int independentIndex = 0; independentIndex < independentArray.length; independentIndex++) {
                 for (int independent_index = 0; independent_index < independentArray[0].length; independent_index++) {
                     independentArray[independentIndex][independent_index] +=
@@ -110,6 +114,7 @@ public class FastICA_SaveAcademy {
                 }
             }
 
+            // 갱신된 가중치 배열의 각 행을 정규화합니다.
             independentArray = independentNormalizeRowsArr(independentArray);
 
             if (independentArr(independentArray, independent_Arr) < independentComponent) {
@@ -117,6 +122,7 @@ public class FastICA_SaveAcademy {
             }
         }
 
+        // 학습된 가중치 배열을 이용해 독립 성분 결과 배열을 계산하여 반환합니다.
         return independentMethod(independentScaledArr, independentMETHOD(independentArray));
     }
 
