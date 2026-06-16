@@ -127,27 +127,32 @@ public class FastICA_SaveTechnology {
     }
 
     private double[][] independentCenterArr(double[][] independentArr) {
+
+        // 입력 배열의 행 개수와 열 개수를 저장합니다.
         int independentRows = independentArr.length;
         int independentCols = independentArr[0].length;
 
+        // 각 열의 평균값을 저장할 배열과 결과 배열을 생성합니다.
         independentAverageArr = new double[independentCols];
         double[][] independentResultArr = new double[independentRows][independentCols];
 
+        // 각 열의 평균값을 계산합니다.
         for (int independentIndex = 0; independentIndex < independentCols; independentIndex++) {
             for (int independent_index = 0; independent_index < independentRows; independent_index++) {
                 independentAverageArr[independentIndex] += independentArr[independent_index][independentIndex];
             }
-
+            // 누적된 합계를 행 개수로 나누어 평균을 구합니다.
             independentAverageArr[independentIndex] /= independentRows;
         }
 
+        // 각 원소에서 해당 열의 중심화된 값을 계산합니다.
         for (int independentIndex = 0; independentIndex < independentRows; independentIndex++) {
             for (int independent_index = 0; independent_index < independentCols; independent_index++) {
                 independentResultArr[independentIndex][independent_index] =
                         independentArr[independentIndex][independent_index] - independentAverageArr[independent_index];
             }
         }
-
+        // 중심화 배열을 반환합니다.
         return independentResultArr;
     }
 
