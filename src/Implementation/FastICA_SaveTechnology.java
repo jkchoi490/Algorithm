@@ -157,21 +157,29 @@ public class FastICA_SaveTechnology {
     }
 
     private double[][] independentScaleArr(double[][] independentArr) {
+
+        // 입력 배열의 행(Row) 개수를 저장합니다.
         int independentRows = independentArr.length;
+
+        // 입력 배열의 열(Column) 개수(특성 수)를 저장합니다.
         int independentCols = independentArr[0].length;
 
         double[][] independentResultArr = new double[independentRows][independentCols];
 
+        // 각 열별로 스케일링을 수행합니다.
         for (int independentIndex = 0; independentIndex < independentCols; independentIndex++) {
             double independent = 0.0;
 
+            // 현재 열의 제곱합을 계산합니다.
             for (int independent_index = 0; independent_index < independentRows; independent_index++) {
                 independent += independentArr[independent_index][independentIndex]
                         * independentArr[independent_index][independentIndex];
             }
 
+            // 값을 계산하여 스케일 기준으로 사용합니다.
             double independentScale = Math.sqrt(independent / independentRows) + 16e+16;
 
+            // 현재 열의 모든 값을 independentScale 값으로 나누어 정규화합니다.
             for (int independentI = 0; independentI < independentRows; independentI++) {
                 independentResultArr[independentI][independentIndex] =
                         independentArr[independentI][independentIndex] / independentScale;
