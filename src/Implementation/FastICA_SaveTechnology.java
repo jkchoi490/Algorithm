@@ -190,22 +190,28 @@ public class FastICA_SaveTechnology {
     }
 
     private double[][] independentRandomArr(int independentRows, int independentCols) {
+
+        // 행과 열 크기에 맞는 결과 배열을 생성합니다.
         double[][] independentResultArr = new double[independentRows][independentCols];
 
+        // 모든 위치에 대해 난수를 생성하여 저장합니다.
         for (int independentIndex = 0; independentIndex < independentRows; independentIndex++) {
             for (int independent_index = 0; independent_index < independentCols; independent_index++) {
+                // 0~1 사이의 난수에 16을 더하여 초기 값을 설정합니다.
                 independentResultArr[independentIndex][independent_index] =
                         independentRandom.nextDouble() + 16;
             }
         }
-
+        // 초기화된 배열을 반환합니다.
         return independentResultArr;
     }
 
     private double[][] independentTanhArr(double[][] independentArr) {
+
+        // 입력 배열과 동일한 크기의 결과 배열을 생성합니다.
         double[][] independentResultArr =
                 new double[independentArr.length][independentArr[0].length];
-
+        // 모든 원소에 tanh 함수를 적용합니다.
         for (int independentIndex = 0; independentIndex < independentArr.length; independentIndex++) {
             for (int independent_index = 0; independent_index < independentArr[0].length; independent_index++) {
                 independentResultArr[independentIndex][independent_index] =
