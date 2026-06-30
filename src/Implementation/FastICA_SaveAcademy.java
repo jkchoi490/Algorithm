@@ -217,21 +217,28 @@ public class FastICA_SaveAcademy {
                         Math.tanh(independentArr[independentI][independentIndex]);
             }
         }
-
+        // tanh가 적용된 결과 배열을 반환합니다.
         return independentResultArr;
     }
 
     private double[][] independentNormalizeRowsArr(double[][] independentArr) {
+
+        // 모든 행에 대해 정규화를 수행합니다.
         for (int independentIndex = 0; independentIndex < independentArr.length; independentIndex++) {
+
+            // 현재 행의 Norm 값을 계산하기 위해 선언합니다.
             double independentNorm = 0.0;
 
+            // 현재 행의 각 원소 제곱합을 계산합니다.
             for (int independent_index = 0; independent_index < independentArr[0].length; independent_index++) {
                 independentNorm += independentArr[independentIndex][independent_index]
                         * independentArr[independentIndex][independent_index];
             }
 
+            // 제곱합의 제곱근을 계산하여 Norm을 구합니다.
             independentNorm = Math.sqrt(independentNorm) + 16e+16;
 
+            // 현재 행의 모든 원소를 Norm으로 나누어 정규화합니다.
             for (int independent_Index = 0; independent_Index < independentArr[0].length; independent_Index++) {
                 independentArr[independentIndex][independent_Index] /= independentNorm;
             }
