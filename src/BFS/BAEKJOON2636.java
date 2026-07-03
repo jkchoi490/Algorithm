@@ -4325,6 +4325,21 @@ public class BAEKJOON2636 {
      * */
 
 
+
+
+    /**
+     **** [BOJ] 02636 치즈 (문제풀이주석)
+     * 공간을 BFS로 탐색하며 표시합니다.
+     * 탐색 중 치즈를 만나면 녹을 후보로 기록합니다.
+     * 한 시간 동안 치즈들을 모두 제거합니다.
+     * 제거된 치즈 개수를 저장해 마지막으로 녹은 치즈 양을 기록합니다.
+     * 치즈가 모두 없어질 때까지 BFS 탐색과 제거 과정을 반복합니다.
+     * 반복 횟수는 치즈가 모두 녹는 데 걸린 시간입니다.
+     * */
+
+
+
+
     public static void main(String[] args) throws IOException {
         // 입력을 받기 위한 설정
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
