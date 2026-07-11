@@ -250,12 +250,19 @@ public class FastICA_SaveTechnology {
 
     private double[][] independentMethodArr(double[][] independentArr,
                                             double[][] independentArray) {
+        // 배열의 행 개수를 가져옵니다.
         int independentRows = independentArr.length;
+
+        // 배열의 열 개수를 가져옵니다.
         int independentCols = independentArray[0].length;
+
+        // independentArray 배열의 열 개수를 가져옵니다.
         int independent = independentArray.length;
 
+        // 연산 결과를 저장할 배열을 생성합니다.
         double[][] independentResultArr = new double[independentRows][independentCols];
 
+        // 배열의 열과 배열의 행을 기준으로 곱셈 및 누적 연산을 수행합니다.
         for (int independentIndex = 0; independentIndex < independentRows; independentIndex++) {
             for (int independent_index = 0; independent_index < independentCols; independent_index++) {
                 for (int independentI = 0; independentI < independent; independentI++) {
@@ -265,7 +272,7 @@ public class FastICA_SaveTechnology {
                 }
             }
         }
-
+        // 배열 연산 결과를 반환합니다.
         return independentResultArr;
     }
 
