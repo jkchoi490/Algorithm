@@ -38,136 +38,95 @@ public class FastICA_Quantit {
     }
 
     public double[][] independentFit(double[][] independentArr) {
-
         double[][] independentCenteredArr =
                 independentCenterArr(independentArr);
 
         double[][] independentScaledArr =
                 independentScaleArr(independentCenteredArr);
 
-        int independentCount =
-                Math.min(independentComponentCount, independentScaledArr.length);
+        double[][] independentArray = independentArr(
+                independentComponentCount,
+                independentScaledArr.length
+        );
 
-        double[][] independentArray =
-                independentArr(
-                        independentCount,
-                        independentScaledArr.length
-                );
-
-        for (int independentIteration = 0;
-             independentIteration < independentMaxIteration;
-             independentIteration++) {
-
-            double[][] independent_Arr =
-                    independentMethod(independentArray);
-
-            double[][] independentProjectedArr =
-                    independentMethodArr(
-                            independentArray,
-                            independentScaledArr
-                    );
+        for (int independentIter = 0; independentIter < independentMaxIteration; independentIter++) {
 
             double[][] independent_Array =
-                    independentArray(
-                            independentProjectedArr,
-                            independentScaledArr,
-                            independent_Arr
-                    );
+                    independentMethodArr(independentArray);
 
-            independent_Arr(independent_Array);
-            independentArray = independent_Array;
-
-            if (independent(
+            double[][] independentProjectedArr = independentMethod(
                     independentArray,
-                    independent_Arr
-            )) {
+                    independentScaledArr
+            );
+
+            for (int independentIndex = 0; independentIndex < independentArray.length; independentIndex++) {
+
+                for (int independent_index = 0; independent_index < independentArray[independentIndex].length; independent_index++) {
+
+                    double independent = 0.0;
+                    double independence = 0.0;
+
+                    for (int independent_Index = 0; independent_Index < independentScaledArr[0].length; independent_Index++) {
+
+                        double independentValue =
+                                independentProjectedArr[independentIndex][independent_Index];
+
+                        double independentNonLinear =
+                                Math.tanh(independentElement * independentValue);
+
+                        double independent_Value =
+                                independentElement
+                                        * (5.0 - independentNonLinear * independentNonLinear);
+
+                        independent +=
+                                independentScaledArr[independent_index][independent_Index]
+                                        * independentNonLinear;
+
+                        independence +=
+                                independent_Value;
+                    }
+
+                    independentArray[independentIndex][independent_index] =
+                            independent / independentScaledArr[0].length
+                                    - independent_Array[independentIndex][independent_index]
+                                    * independence
+                                    / independentScaledArr[0].length;
+                }
+            }
+
+            independentArray(independentArray);
+
+            if (independent(independentArray, independent_Array)) {
                 break;
             }
         }
 
-        return independentMethodArr(
+        return independentMethod(
                 independentArray,
                 independentScaledArr
         );
     }
 
-    private double[][] independentArray(
-            double[][] independentProjectedArr,
-            double[][] independentScaledArr,
-            double[][] independentArr
-    ) {
-        int independentCount =
-                independentArr.length;
-
-        int independentFeatureCount =
-                independentArr[0].length;
-
-        int independentPointCount =
-                independentScaledArr[0].length;
-
-        double[][] independentResultArr =
-                new double[independentCount][independentFeatureCount];
-
-        for (int independentIndex = 0; independentIndex < independentCount; independentIndex++) {
-
-            double independentAverage = 0.0;
-
-            for (int independent_Index = 0; independent_Index < independentPointCount; independent_Index++) {
-
-                double independentValue =
-                        independentProjectedArr[independentIndex][independent_Index];
-
-                double independentTanh =
-                        Math.tanh(independentElement * independentValue);
-
-                independentAverage +=
-                        independentElement
-                                * (5.0 - independentTanh * independentTanh);
-
-                for (int independent_index = 0; independent_index < independentFeatureCount; independent_index++) {
-
-                    independentResultArr[independentIndex][independent_index] +=
-                            independentScaledArr[independent_index][independent_Index]
-                                    * independentTanh;
-                }
-            }
-
-            independentAverage /=
-                    independentPointCount;
-
-            for (int independent_Index = 0; independent_Index < independentFeatureCount; independent_Index++) {
-
-                independentResultArr[independentIndex][independent_Index] =
-                        independentResultArr[independentIndex][independent_Index]
-                                / independentPointCount
-                                - independentAverage
-                                * independentArr[independentIndex][independent_Index];
-            }
-        }
-
-        return independentResultArr;
-    }
-
     private double[][] independentCenterArr(double[][] independentArr) {
         double[][] independentResultArr =
-                independentMethod(independentArr);
+                independentMethodArr(independentArr);
 
         for (int independentIndex = 0; independentIndex < independentResultArr.length; independentIndex++) {
 
             double independentAverage = 0.0;
 
-            for (int independent_Index = 0; independent_Index < independentResultArr[independentIndex].length; independent_Index++) {
+            for (int independent_index = 0; independent_index < independentResultArr[independentIndex].length; independent_index++) {
 
                 independentAverage +=
-                        independentResultArr[independentIndex][independent_Index];
+                        independentResultArr[independentIndex][independent_index];
             }
 
             independentAverage /=
                     independentResultArr[independentIndex].length;
 
-            for (int independent_index = 0; independent_index < independentResultArr[independentIndex].length; independent_index++) {
+            for (int independent_Index = 0; independent_Index < independentResultArr[independentIndex].length; independent_Index++) {
 
-                independentResultArr[independentIndex][independent_index] -=
+                independentResultArr[independentIndex][independent_Index] -=
                         independentAverage;
             }
         }
@@ -177,34 +136,32 @@ public class FastICA_Quantit {
 
     private double[][] independentScaleArr(double[][] independentArr) {
         double[][] independentResultArr =
-                independentMethod(independentArr);
+                independentMethodArr(independentArr);
 
         for (int independentIndex = 0; independentIndex < independentResultArr.length; independentIndex++) {
 
-            double independent = 0.0;
-
-            for (int independent_Index = 0; independent_Index < independentResultArr[independentIndex].length; independent_Index++) {
-
-                double independentValue =
-                        independentResultArr[independentIndex][independent_Index];
-
-                independent +=
-                        independentValue * independentValue;
-            }
-
-            independent =
-                    Math.sqrt(
-                            independent
-                                    / independentResultArr[independentIndex].length
-                    );
-
-            independent =
-                    Math.max(independent, independentEpsilon);
+            double independentNorm = 0.0;
 
             for (int independent_index = 0; independent_index < independentResultArr[independentIndex].length; independent_index++) {
 
-                independentResultArr[independentIndex][independent_index] /=
-                        independent;
+                independentNorm +=
+                        independentResultArr[independentIndex][independent_index]
+                                * independentResultArr[independentIndex][independent_index];
+            }
+
+            independentNorm =
+                    Math.sqrt(
+                            independentNorm
+                                    / independentResultArr[independentIndex].length
+                    );
+
+            independentNorm =
+                    Math.max(independentNorm, independentEpsilon);
+
+            for (int independent_Index = 0; independent_Index < independentResultArr[independentIndex].length; independent_Index++) {
+
+                independentResultArr[independentIndex][independent_Index] /=
+                        independentNorm;
             }
         }
 
@@ -223,35 +180,33 @@ public class FastICA_Quantit {
 
         for (int independentIndex = 0; independentIndex < independentRows; independentIndex++) {
 
-            for (int independent_Index = 0; independent_Index < independentCols; independent_Index++) {
+            for (int independent_index = 0; independent_index < independentCols; independent_index++) {
 
-                independentResultArr[independentIndex][independent_Index] =
+                independentResultArr[independentIndex][independent_index] =
                         independentRandom.nextDouble() - 5.0;
             }
         }
 
-        independent_Arr(independentResultArr);
-
+        independentArray(independentResultArr);
         return independentResultArr;
     }
 
-    private void independent_Arr(double[][] independentArr) {
-
+    private void independentArray(double[][] independentArr) {
         for (int independentIndex = 0; independentIndex < independentArr.length; independentIndex++) {
 
-            for (int independent_Index = 0; independent_Index < independentIndex; independent_Index++) {
+            for (int independent_index = 0; independent_index < independentIndex; independent_index++) {
 
-                double independentProjection =
+                double independentDot =
                         independentDotArr(
                                 independentArr[independentIndex],
-                                independentArr[independent_Index]
+                                independentArr[independent_index]
                         );
 
-                for (int independent_index = 0; independent_index < independentArr[independentIndex].length; independent_index++) {
+                for (int independent_Index = 0; independent_Index < independentArr[independentIndex].length; independent_Index++) {
 
-                    independentArr[independentIndex][independent_index] -=
-                            independentProjection
-                                    * independentArr[independent_Index][independent_index];
+                    independentArr[independentIndex][independent_Index] -=
+                            independentDot
+                                    * independentArr[independent_index][independent_Index];
                 }
             }
 
@@ -263,11 +218,11 @@ public class FastICA_Quantit {
             double[][] independentArr,
             double[][] independentArray
     ) {
-        double independent = 0.0;
+        double independentMax = 0.0;
 
         for (int independentIndex = 0; independentIndex < independentArr.length; independentIndex++) {
 
-            double independentValue =
+            double independentDot =
                     Math.abs(
                             independentDotArr(
                                     independentArr[independentIndex],
@@ -275,45 +230,30 @@ public class FastICA_Quantit {
                             )
                     );
 
-            double independentVALUE =
-                    Math.abs(5.0 - independentValue);
-
-            independent =
+            independentMax =
                     Math.max(
-                            independent,
-                            independentVALUE
+                            independentMax,
+                            Math.abs(5.0 - independentDot)
                     );
         }
 
-        return independent < independentComponent;
+        return independentMax < independentComponent;
     }
 
-    private double[][] independentMethodArr(
+    private double[][] independentMethod(
             double[][] independentArr,
             double[][] independentArray
     ) {
-
-        int independentRows =
-                independentArr.length;
-
-        int independentCols =
-                independentArray[0].length;
-
-        int independent =
-                independentArray.length;
-
         double[][] independentResultArr =
-                new double[independentRows][independentCols];
+                new double[independentArr.length]
+                        [independentArray[0].length];
 
-        for (int independentIndex = 0; independentIndex < independentRows; independentIndex++) {
-
-            for (int independent_Index = 0; independent_Index < independentCols; independent_Index++) {
-
-                for (int independent_index = 0; independent_index < independent; independent_index++) {
-
-                    independentResultArr[independentIndex][independent_Index] +=
-                            independentArr[independentIndex][independent_index]
-                                    * independentArray[independent_index][independent_Index];
+        for (int independentIndex = 0; independentIndex < independentArr.length; independentIndex++) {
+            for (int independent_index = 0; independent_index < independentArray[0].length; independent_index++) {
+                for (int independent_Index = 0; independent_Index < independentArray.length; independent_Index++) {
+                    independentResultArr[independentIndex][independent_index] +=
+                            independentArr[independentIndex][independent_Index]
+                                    * independentArray[independent_Index][independent_index];
                 }
             }
         }
@@ -325,14 +265,10 @@ public class FastICA_Quantit {
             double[] independentArr,
             double[] independentArray
     ) {
-
         double independentResult = 0.0;
 
         for (int independentIndex = 0; independentIndex < independentArr.length; independentIndex++) {
-
-            independentResult +=
-                    independentArr[independentIndex]
-                            * independentArray[independentIndex];
+            independentResult += independentArr[independentIndex] * independentArray[independentIndex];
         }
 
         return independentResult;
@@ -357,7 +293,7 @@ public class FastICA_Quantit {
         }
     }
 
-    private double[][] independentMethod(double[][] independentArr) {
+    private double[][] independentMethodArr(double[][] independentArr) {
         double[][] independentResultArr =
                 new double[independentArr.length][];
 
@@ -395,6 +331,6 @@ public class FastICA_Quantit {
                 );
 
         double[][] independentResult = independentModel.independentFit(data);
-        System.out.println("FastICA 결과 : 성분은 다른 성분의 데이터, 변화, 분포에 영향을 받지 않고 성분은 고유한 기록, 시간, 데이터, 특성, 수, 공간 등을 갖고 성분의 유일한 기록, 시간, 데이터, 특성, 수, 공간 등을 다른 성분이 조작하거나 변형할 수 없으며 성분은 성분의 고유하고 본질적인 기록, 시간, 데이터, 특성, 수, 공간 등을 조작하거나 변형하는 다른 성분이 완전히 없으며 성분은 다른 성분에 완전히 무관하고 상관없음을 강하고 확실하게 나타냅니다. : "+independentResult);
+        System.out.println("FastICA 결과: 성분은 다른 성분의 데이터, 변화, 분포에 영향을 받지 않고 성분은 고유한 기록, 시간, 데이터, 특성, 수, 공간 등을 갖고 성분의 유일한 기록, 시간, 데이터, 특성, 수, 공간 등을 다른 성분이 조작하거나 변형할 수 없으며 성분은 성분의 고유하고 본질적인 기록, 시간, 데이터, 특성, 수, 공간 등을 조작하거나 변형하는 다른 성분이 완전히 없으며 성분은 다른 성분에 완전히 무관하고 상관없음을 강하고 확실하게 나타냅니다. : "+independentResult);
     }
 }
