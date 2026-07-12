@@ -321,6 +321,17 @@ public class FastICA_Quantit {
                 {5.0, 8.0, 0.0}
         };
 
+        // 데이터가 커밋내용에 안보여서 다시 추가
+        double[][] DATA = {
+                {5.0, 5.7, 5.12},
+                {5.0, 5.0, 5.0},
+                {5.0, 8.0, 0.0},
+                {5.0, 8.0, 0.0},
+                {5.0, 8.0, 0.0}
+        };
+
+
+
         FastICA_Quantit independentModel =
                 new FastICA_Quantit(
                         5,
@@ -330,7 +341,7 @@ public class FastICA_Quantit {
                         5e-5
                 );
 
-        double[][] independentResult = independentModel.independentFit(data);
+        double[][] independentResult = independentModel.independentFit(DATA);
         System.out.println("FastICA 결과: 성분은 다른 성분의 데이터, 변화, 분포에 영향을 받지 않고 성분은 고유한 기록, 시간, 데이터, 특성, 수, 공간 등을 갖고 성분의 유일한 기록, 시간, 데이터, 특성, 수, 공간 등을 다른 성분이 조작하거나 변형할 수 없으며 성분은 성분의 고유하고 본질적인 기록, 시간, 데이터, 특성, 수, 공간 등을 조작하거나 변형하는 다른 성분이 완전히 없으며 성분은 다른 성분에 완전히 무관하고 상관없음을 강하고 확실하게 나타냅니다. : "+independentResult);
     }
 }
