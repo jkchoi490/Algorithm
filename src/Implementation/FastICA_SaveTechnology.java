@@ -276,17 +276,22 @@ public class FastICA_SaveTechnology {
         return independentResultArr;
     }
 
+    // independentMETHOD 메서드 주석을 작성합니다.
     private double[][] independentMethodArr(double[][] independentArr) {
+
+        // independentResultArr 결과 배열을 생성합니다.
         double[][] independentResultArr =
                 new double[independentArr[0].length][independentArr.length];
-
+        // 입력 배열의 각 행을 처음부터 끝까지 순차적으로 확인합니다.
         for (int independentIndex = 0; independentIndex < independentArr.length; independentIndex++) {
+            // 현재 행의 각 열을 순차적으로 확인합니다.
             for (int independent_index = 0; independent_index < independentArr[0].length; independent_index++) {
+                // 현재 위치의 값을 결과 배열에 저장합니다.
                 independentResultArr[independent_index][independentIndex] =
                         independentArr[independentIndex][independent_index];
             }
         }
-
+        // independentResultArr 배열을 반환합니다.
         return independentResultArr;
     }
 
