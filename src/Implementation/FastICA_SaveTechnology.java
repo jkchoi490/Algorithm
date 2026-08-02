@@ -296,19 +296,26 @@ public class FastICA_SaveTechnology {
     }
 
     private double[][] independentMethod(double[][] independentArr) {
+
+        // independentResultArr 배열을 생성합니다.
         double[][] independentResultArr =
                 new double[independentArr.length][independentArr[0].length];
 
+        // 각 행을 순서대로 확인하며 내용을 배열에 저장합니다.
         for (int independentR = 0; independentR < independentArr.length; independentR++) {
+
+            // 현재 행의 모든 값을 한번에 처리합니다.
             System.arraycopy(
                     independentArr[independentR],
                     0,
+                    // 같은 위치에 있는 행에 값을 그대로 담습니다.
                     independentResultArr[independentR],
                     0,
+                    // 현재 행의 전체 길이만큼 처리합니다.
                     independentArr[0].length
             );
         }
-
+        // 모든 행의 처리가 완료된 결과 배열을 반환합니다.
         return independentResultArr;
     }
 
