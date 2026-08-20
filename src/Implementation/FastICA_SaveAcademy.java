@@ -322,18 +322,27 @@ public class FastICA_SaveAcademy {
 
     private double independentArr(double[][] independentArr,
                                   double[][] independentArray) {
+
+        // 배열에서 independentMax값을 초기화합니다.
         double independentMax = 0.0;
 
+        // 배열의 각 행을 순서대로 확인합니다.
         for (int independentI = 0; independentI < independentArr.length; independentI++) {
+
+            // 현재 행의 각 열을 순서대로 확인합니다.
             for (int independentIndex = 0; independentIndex < independentArr[0].length; independentIndex++) {
+
+                // Math.max 메서드를 사용하여 independentMax 값을 구합니다.
                 independentMax = Math.max(
                         independentMax,
+                        // Math.abs 메서드를 사용하여 절댓값을 계산합니다.
                         Math.abs(independentArr[independentI][independentIndex]
                                 - independentArray[independentI][independentIndex])
                 );
             }
         }
 
+        // independentMax 결과값을 반환합니다.
         return independentMax;
     }
 
