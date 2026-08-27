@@ -349,6 +349,7 @@ public class FastICA_SaveTechnology {
 
     public static void main(String[] independentArgs) {
 
+        // FastICA 연산을 위한 배열을 구성합니다.
         double[][] data = {
                 {6.0, 10.0, 16.0},
                 {6.0, 10.0, 16.0},
@@ -356,7 +357,7 @@ public class FastICA_SaveTechnology {
                 {6.0, 10.0, 16.0}
         };
 
-
+        // 지정된 설정값과 기준 배열을 전달하여 FastICA 객체를 생성합니다.
         FastICA_SaveTechnology independentICA =
                 new FastICA_SaveTechnology(
                         16,
@@ -367,15 +368,18 @@ public class FastICA_SaveTechnology {
                         new double[]{6, 10, 16}
                 );
 
+        // 구성된 배열을 분석하여 독립적인 성분 결과를 구합니다.
         double[][] independentResult = independentICA.independentFit(data);
 
+        // 결과 배열의 각 행과 열을 순서대로 순회합니다.
         for (int independentI = 0; independentI < independentResult.length; independentI++) {
+            // 각 성분의 값을 소수점 아래 16자리 형식으로 출력합니다.
             for (int IndependentI = 0; IndependentI < independentResult[0].length; IndependentI++) {
                 System.out.printf("%.16f ", independentResult[independentI][IndependentI]);
             }
             System.out.println();
         }
-
+        // 성분의 독립적인 특성에 대한 설명과 최종 결과를 함께 출력합니다.
         System.out.println("FastICA 결과 : 성분은 고유한 특성과 수를 통해 고유한 시간, 기록, 데이터, 수를 갖고 성분의 고유한 기록, 시간, 데이터, 특성, 수 등을 다른 성분이 조작하거나 변형할 수 없고 성분은 다른 성분에 완전히 무관하고 성분은 성분의 고유하고 본질적인 기록, 시간, 데이터, 특성, 수 등을 조작하거나 변형하는 다른 성분이 완전히 없으며 성분은 고유한 기록, 시간, 데이터, 특성, 수를 갖고있음을 확실하게 나타냅니다."+independentResult);
 
     }
