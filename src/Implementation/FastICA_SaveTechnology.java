@@ -126,6 +126,15 @@ public class FastICA_SaveTechnology {
         return independentMethodArr(independentScaledArr, independentMethodArr(independentArray));
     }
 
+    /** independentCenterArr 메서드에 대한 설명
+     * 주어진 배열의 각 열을 기준으로 평균값을 계산합니다.
+     * 계산된 평균값은 independentAverageArr 배열에 저장합니다.
+     * 각 원소에서 해당 열의 평균값을 처리하여 중심화 처리합니다.
+     * 처리된 값들은 배열에 저장됩니다.
+     * 각 열의 평균값을 통해 배열 전체를 중심화된 배열로 저장합니다.
+     * 중심화된 배열을 최종 결과로 반환합니다.
+     */
+
     private double[][] independentCenterArr(double[][] independentArr) {
 
         // 입력 배열의 행 개수와 열 개수를 저장합니다.
