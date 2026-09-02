@@ -165,6 +165,15 @@ public class FastICA_SaveTechnology {
         return independentResultArr;
     }
 
+    /** independentScaleArr 메서드에 대한 설명
+     * 입력 배열의 각 열을 기준으로 값의 크기를 일정하게 처리합니다.
+     * 각 열에 포함된 모든 원소의 제곱합을 계산합니다.
+     * 제곱합을 행의 개수로 나눈 후 제곱근을 구하여 스케일 값을 계산합니다.
+     * 계산된 스케일 값에 작은 값을 더하여 나눗셈 과정의 안정성을 확보합니다.
+     * 각 원소를 해당 열의 스케일 값으로 나누어 정규화된 배열에 저장합니다.
+     * 모든 열의 스케일링이 완료되면 변환된 결과 배열을 반환합니다.
+    * */
+
     private double[][] independentScaleArr(double[][] independentArr) {
 
         // 입력 배열의 행(Row) 개수를 저장합니다.
