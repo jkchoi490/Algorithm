@@ -266,6 +266,15 @@ public class FastICA_SaveTechnology {
         return independentArr;
     }
 
+    /** independentMethodArr 메서드에 대한 설명
+     * 행과 열 크기를 확인하여 연산에 필요한 범위를 설정합니다.
+     * 배열의 행과 열을 기준으로 결과 배열을 생성합니다.
+     * 배열의 행과 열을 통해 공통 연산 범위로 사용합니다.
+     * 각 결과 위치를 계산하며 곱한 값들을 반복해서 누적합니다.
+     * 배열의 열과 배열의 행을 기준으로 계산을 진행합니다.
+     * 완성된 모든 연산 결과를 배열로 반환합니다.
+     */
+
     private double[][] independentMethodArr(double[][] independentArr,
                                             double[][] independentArray) {
         // 배열의 행 개수를 가져옵니다.
