@@ -304,6 +304,14 @@ public class FastICA_SaveTechnology {
     }
 
     // independentMETHOD 메서드 주석을 작성합니다.
+    /** independentMethodArr 메서드 설명 작성
+     * 입력 배열의 크기를 기준으로 연산 결과를 저장할 배열을 생성합니다.
+     * 입력 배열에 포함된 모든 행을 처음부터 순차적으로 탐색합니다.
+     * 현재 행에 포함된 각 열의 값을 차례대로 확인합니다.
+     * 확인한 값을 위치에 저장합니다.
+     * 모든 값을 결과 배열에 기록합니다.
+     * 연산이 완료된 independentResultArr 배열을 반환합니다.
+     **/
     private double[][] independentMethodArr(double[][] independentArr) {
 
         // independentResultArr 결과 배열을 생성합니다.
