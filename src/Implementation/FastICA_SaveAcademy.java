@@ -331,6 +331,14 @@ public class FastICA_SaveAcademy {
         return independentResultArr;
     }
 
+    /** independentMethod 메서드 설명 작성
+     * independentResultArr 배열을 생성합니다.
+     * 각 행을 순서대로 확인하며 내용을 배열에 저장합니다.
+     * 현재 행에 포함된 각 열의 값을 차례대로 확인합니다.
+     * 확인한 값을 위치에 저장합니다.
+     * 연산이 진행된 값을 결과 배열에 기록합니다.
+     * 연산이 완료된 independentResultArr 배열을 반환합니다.
+     **/
     private double[][] independentMethodArr(double[][] independentArr) {
 
         // independentResultArr 배열을 생성합니다.
