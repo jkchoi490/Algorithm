@@ -363,6 +363,14 @@ public class FastICA_SaveAcademy {
         return independentResultArr;
     }
 
+    /** independentArr 메서드 설명 작성
+     * 배열에서 independentMax값을 초기화합니다.
+     * 배열의 각 행을 순서대로 확인합니다.
+     * 현재 행의 각 열을 순서대로 확인합니다.
+     * Math.max 메서드를 사용하여 independentMax 값을 구합니다.
+     * Math.abs 메서드를 사용하여 절댓값을 계산합니다.
+     * independentMax 결과값을 반환합니다.
+     **/
     private double independentArr(double[][] independentArr,
                                   double[][] independentArray) {
 
