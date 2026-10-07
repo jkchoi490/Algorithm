@@ -224,6 +224,14 @@ public class FastICA_SaveAcademy {
         return independentResultArr;
     }
 
+    /** independentTanhArr 메서드에 대한 설명
+     * independentResultArr 결과 배열을 생성합니다.
+     * 배열의 각 행을 처음부터 끝까지 순서대로 확인합니다.
+     * 현재 행에 포함된 각 열의 값을 차례대로 확인합니다.
+     * Math.tanh 메서드로 탄젠트 값을 계산합니다.
+     * 계산한 값을 결과 배열의 동일한 행과 열 위치에 저장합니다.
+     * 모든 원소에 tanh 함수가 적용된 결과 배열을 반환합니다.
+     */
     private double[][] independentTanhArr(double[][] independentArr) {
         // 입력 배열과 동일한 크기의 결과 배열을 생성합니다.
         double[][] independentResultArr =
