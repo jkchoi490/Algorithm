@@ -248,6 +248,15 @@ public class FastICA_SaveTechnology {
         return independentResultArr;
     }
 
+    /** independentNormalizeRowsArr 메서드 설명 작성
+     * 배열의 모든 행을 순서대로 확인합니다.
+     * 현재 행의 크기를 계산할 independentNorm을 초기화합니다.
+     * 현재 행에 포함된 각 원소의 제곱을 누적합니다.
+     * 제곱합의 제곱근에 16e+16을 더하여 나눗셈에 사용할 값을 구합니다.
+     * 현재 행의 각 원소를 independentNorm으로 나누어 저장합니다.
+     * 모든 행의 처리가 완료된 independentArr 배열을 반환합니다.
+     * */
+
     private double[][] independentNormalizeRowsArr(double[][] independentArr) {
 
         // 모든 행에 대해 정규화를 수행합니다.
