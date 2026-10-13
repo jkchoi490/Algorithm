@@ -207,6 +207,15 @@ public class FastICA_SaveTechnology {
         return independentResultArr;
     }
 
+    /** independentRandomArr 메서드에 대한 설명
+     * 행과 열 크기에 맞는 결과 배열을 생성합니다.
+     * 각 행을 순서대로 탐색합니다.
+     * 현재 행의 각 열을 순서대로 탐색합니다.
+     * 0 이상 1 미만의 난수를 생성합니다.
+     * 생성한 난수에 16을 더하여 현재 위치에 저장합니다.
+     * independentResultArr 배열을 반환합니다.
+     */
+
     private double[][] independentRandomArr(int independentRows, int independentCols) {
 
         // 행과 열 크기에 맞는 결과 배열을 생성합니다.
