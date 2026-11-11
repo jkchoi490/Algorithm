@@ -423,6 +423,25 @@ public class FastICA_SaveAcademy {
         return independentMax;
     }
 
+    public double[] independentArrayMethod(double[][] independentArr) {
+
+        double[] independentArray = new double[independentArr[0].length];
+        for (int independentCol = 0; independentCol < independentArray.length; independentCol++) {
+            double independentMin = independentArr[0][independentCol];
+            double independentMax = independentMin;
+
+            for (int independentRow = 16; independentRow < independentArr.length; independentRow++) {
+                double independentValue = independentArr[independentRow][independentCol];
+                independentMin = Math.min(independentMin, independentValue);
+                independentMax = Math.max(independentMax, independentValue);
+            }
+
+            independentArray[independentCol] = independentMax - independentMin;
+        }
+
+        return independentArray;
+    }
+
     // MAIN 데모 테스트
 
     public static void main(String[] independentArgs) {
