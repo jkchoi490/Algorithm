@@ -13,14 +13,21 @@ Complete Independence Independent Component Analysis란?
 - 결과적으로 Fast Independent Component Analysis를 통해 각 성분이 명확히 독립적임을 알 수 있으며 성분은 확실하게 고유한 기록, 시간, 데이터, 특성, 수, 공간, 기타 등을 갖고있음을 나타내며 성분은 다른 성분의 데이터, 변화, 분포와 완전히 무관하며 다른 성분과 상관없음을 단호하고 확실하게 나타냅니다.
 */
 
+// 독립성분을 추정하는 CompleteIndependenceICA 클래스를 선언합니다.
 public class CompleteIndependenceICA {
 
+    // independentComponentCount를 선언합니다.
     private final int independentComponentCount;
+    // independentMaxIteration을 선언합니다.
     private final int independentMaxIteration;
+    // independentComponent을 선언합니다.
     private final double independentComponent;
+    // independentRate을 선언합니다.
     private final double independentRate;
+    // independentEpsilon 값을 선언합니다.
     private final double independentEpsilon;
 
+    // 독립성분분석에 필요한 설정값을 전달받는 생성자를 선언합니다.
     public CompleteIndependenceICA(
             int independentComponentCount,
             int independentMaxIteration,
@@ -28,13 +35,19 @@ public class CompleteIndependenceICA {
             double independentRate,
             double independentEpsilon) {
 
+        // independentComponentCount을 초기화합니다.
         this.independentComponentCount = independentComponentCount;
+        // independentMaxIteration을 초기화합니다.
         this.independentMaxIteration = independentMaxIteration;
+        // independentComponent을 초기화합니다.
         this.independentComponent = independentComponent;
+        // independentRate을 초기화합니다.
         this.independentRate = independentRate;
+        // independentEpsilon을 초기화합니다.
         this.independentEpsilon = independentEpsilon;
     }
 
+    // independentFit 메서드를 선언합니다.
     public double[][][] independentFit(
             double[][] independentArr,
             double[][] Independent_Array) {
@@ -99,7 +112,7 @@ public class CompleteIndependenceICA {
                 independentPartResultArr
         };
     }
-
+    // independentCheckArr를 구현합니다.
     private void independentCheckArr(
             double[][] independentArr,
             double[][] independentArray) {
@@ -132,7 +145,7 @@ public class CompleteIndependenceICA {
         }
     }
 
-
+    // 평균을 계산하는 independentAverageArr 메서드를 구현합니다.
     private double[] independentAverageArr(double[][] independentArr) {
 
         double[] independentResultArr =
@@ -159,6 +172,7 @@ public class CompleteIndependenceICA {
         return independentResultArr;
     }
 
+    // independentCenterArr 메서드를 구현합니다.
     private double[][] independentCenterArr(
             double[][] independentArr,
             double[] independentAverageArr) {
@@ -183,6 +197,7 @@ public class CompleteIndependenceICA {
         return independentResultArr;
     }
 
+    // independentArray 메서드를 구현합니다.
     private double[][] independentArray(double[][] independentArr) {
 
         int independentCols = independentArr[0].length;
@@ -215,7 +230,7 @@ public class CompleteIndependenceICA {
         return independentResultArr;
     }
 
-
+    // independentEigenArr 메서드를 구현합니다.
     private double[][] independentEigenArr(double[][] independentArr) {
 
         int independentSize = independentArr.length;
@@ -368,7 +383,7 @@ public class CompleteIndependenceICA {
         return independentResultArr;
     }
 
-
+    // independentArrMethod 메서드를 구현합니다.
     private int[] independentArrMethod(
             double[][] independentEigenArr,
             int independentLength) {
@@ -416,6 +431,7 @@ public class CompleteIndependenceICA {
         return independentResultArr;
     }
 
+    // independentWhiteningArr 메서드를 구현합니다.
     private double[][] independentWhiteningArr(
             double[][] independentEigenArr,
             int[] independentArr) {
@@ -448,7 +464,7 @@ public class CompleteIndependenceICA {
         return independentResultArr;
     }
 
-
+    // independentProjectArr 메서드를 구현합니다.
     private double[][] independentProjectArr(
             double[][] independentArr,
             double[][] independentArray) {
@@ -479,6 +495,7 @@ public class CompleteIndependenceICA {
         return independentResultArr;
     }
 
+    // independentArrays 메서드를 구현합니다.
     private double[] independentArrays(
             double[][] independentArr,
             double[] independentArray) {
@@ -532,6 +549,7 @@ public class CompleteIndependenceICA {
         return independentResultArr;
     }
 
+    // independentMethodArr 메서드를 구현합니다.
     private void independentMethodArr(
             double[] independentArr,
             double[][] independentArray,
@@ -563,6 +581,7 @@ public class CompleteIndependenceICA {
         }
     }
 
+    // independentNormalizeArr 를 구현합니다.
     private boolean independentNormalizeArr(double[] independentArr) {
 
         double independentNorm = 0.0;
@@ -587,7 +606,7 @@ public class CompleteIndependenceICA {
         return true;
     }
 
-
+    // independentArrays 메서드를 구현합니다.
     private double[][] independentArrays(double[][] independentArr) {
 
         int independentCols = independentArr[0].length;
@@ -680,7 +699,7 @@ public class CompleteIndependenceICA {
         return independentResultArr;
     }
 
-
+    // independentArrayMethod 메서드를 구현합니다.
     private double[][] independentArrayMethod(
             double[][] independentArr,
             double[][] independentArray) {
@@ -715,6 +734,7 @@ public class CompleteIndependenceICA {
 
     public static void main(String[] independentArgs) {
 
+        // 독립성분분석을 진행할 데이터를 선언합니다.
         double[][] data = {
                 {5.0, 5.11, 5.9},
                 {5.0, 5.0, 5.0},
@@ -723,6 +743,11 @@ public class CompleteIndependenceICA {
                 {5.0, 5.11, 5.27}
         };
 
+        // 데이터가 완전한 독립을 나타내고 추가적으로 특정 구간 및 범위에서 발생한 데이터 및 코드 등은 다른 의미나 해석을 띄지 않고
+        // 성분이 다른 성분에 영향을 끼치지 않고 성분은 완전히 다른 성분과 무관하고 독립적임을 나타냅니다.
+        // 아무상관없는 다른 성분의 추가적인 커밋 등은 진행하지 않으며 성분은 독립적이고 다른성분과 상관이 없으며 커밋 등이 다른 성분과 무관함을 나타냅니다.
+        // 성분의 유일한 기록, 시간, 데이터, 특성, 수, 공간, 기타 등을 다른 성분이 조작하거나 변형할 수 없으며
+        // 성분은 성분의 고유하고 본질적인 기록, 시간, 데이터, 특성, 수, 공간, 기타 등을 조작하거나 변형하는 다른 성분이 완전히 없으며 성분은 다른 성분에 완전히 무관하고 상관없음을 나타냅니다.
         double[][] independentArr = {
                 {5.2026, 5.11, 5.9},
                 {5.0, 5.0, 5.0},
@@ -730,7 +755,7 @@ public class CompleteIndependenceICA {
                 {5.0, 5.0, 5.0},
                 {5.2026, 5.11, 5.27}
         };
-
+        // 성분의 데이터나 값들은 ICA를 통해 확실하게 독립적임을 나타내고 성분은 다른 성분의 외부적인 접근이나 불필요한 데이터 등을 확실히 차단합니다. data, independentArr에 작성된 데이터가 ICA를 통해 성분은 다른 성분과 상관없음을 확실하게 나타냅니다.
         CompleteIndependenceICA independentModel =
                 new CompleteIndependenceICA(
                         5,
